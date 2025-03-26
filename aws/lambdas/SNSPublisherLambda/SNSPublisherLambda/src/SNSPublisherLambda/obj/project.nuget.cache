@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "sB16fuYaF3g=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\adria\\Desktop\\Git\\cold_start_experiments\\aws\\lambdas\\SNSPublisherLambda\\SNSPublisherLambda\\src\\SNSPublisherLambda\\SNSPublisherLambda.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adria\\.nuget\\packages\\amazon.core\\0.33.0\\amazon.core.0.33.0.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\amazon.lambda.cloudwatchevents\\4.4.0\\amazon.lambda.cloudwatchevents.4.4.0.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\amazon.lambda.core\\2.5.0\\amazon.lambda.core.2.5.0.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.4.4\\amazon.lambda.serialization.systemtextjson.2.4.4.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\amazon.lambda.snsevents\\2.1.0\\amazon.lambda.snsevents.2.1.0.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\amazon.sns\\0.28.0\\amazon.sns.0.28.0.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\awssdk.core\\3.7.402.21\\awssdk.core.3.7.402.21.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\awssdk.eventbridge\\3.7.402.57\\awssdk.eventbridge.3.7.402.57.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\awssdk.simplenotificationservice\\3.7.400.115\\awssdk.simplenotificationservice.3.7.400.115.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\carbon.messaging\\2.0.0\\carbon.messaging.2.0.0.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\8.0.14\\microsoft.netcore.app.runtime.linux-x64.8.0.14.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\8.0.14\\microsoft.aspnetcore.app.runtime.linux-x64.8.0.14.nupkg.sha512",
+    "C:\\Users\\adria\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.14\\microsoft.netcore.app.crossgen2.win-x64.8.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

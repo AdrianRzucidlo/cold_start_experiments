@@ -1,0 +1,78 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+  SNSInvokerSchedule:
+    Type: String
+    Default: "rate(1 hour)"
+    Description: "Harmonogram dla EventBridge Rule (np. rate(5 minutes), rate(1 hour), cron(0 12 * * ? *))"
+
+Resources:
+  SNSPublisherLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: SNSPublisherLambda
+      Runtime: dotnet8
+      Handler: SNSPublisherLambda::SNSPublisherLambda.Function::FunctionHandler
+      Role: !GetAtt SNSPublisherLambdaExecutionRole.Arn
+      Timeout: 10
+      Code:
+        S3Bucket: cold-start-lambdas
+        S3Key: SNSPublisherLambda.zip
+
+  SNSPublisherLambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: SNSPublisherLambdaExecutionRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: 
+                - lambda.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Policies:
+        - PolicyName: CloudWatchLogsPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "arn:aws:logs:*:*:*"
+
+  SNSLambdaInvokerRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: SNSLambdaInvokerRule
+      ScheduleExpression: !Ref SNSInvokerSchedule
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt SNSPublisherLambda.Arn
+          Id: "LambdaTarget"
+          RoleArn: !GetAtt SNSLambdaInvokerRulerRole.Arn
+          
+          
+  SNSLambdaInvokerRulerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: SNSLambdaInvokerRulePermissionRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: events.amazonaws.com
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: SNSLambdaInvokePolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: "lambda:InvokeFunction"
+                Resource: !GetAtt SNSPublisherLambda.Arn
+## DZIALA NIE ROZWALAC
