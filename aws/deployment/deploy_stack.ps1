@@ -6,6 +6,8 @@ $StackExists = aws cloudformation describe-stacks --stack-name $StackName --regi
 
 if ($StackExists) {
     Write-Host "Stack already exists"
+	
+	aws cloudformation wait stack-delete-complete --stack-name $StackName
     
     aws cloudformation update-stack `
         --stack-name $StackName `

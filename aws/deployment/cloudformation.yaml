@@ -15,6 +15,9 @@ Resources:
       Handler: SNSPublisherLambda::SNSPublisherLambda.Function::FunctionHandler
       Role: !GetAtt SNSPublisherLambdaExecutionRole.Arn
       Timeout: 10
+      Environment:
+        Variables:
+          SNSTopicArn: !Ref LambdasSNSTopic
       Code:
         S3Bucket: cold-start-lambdas
         S3Key: SNSPublisherLambda.zip
@@ -43,6 +46,13 @@ Resources:
                   - "logs:CreateLogStream"
                   - "logs:PutLogEvents"
                 Resource: "arn:aws:logs:*:*:*"
+        - PolicyName: SNSPublishPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: sns:Publish
+                Resource: !Ref LambdasSNSTopic
 
   SNSLambdaInvokerRule:
     Type: AWS::Events::Rule
@@ -75,4 +85,59 @@ Resources:
               - Effect: Allow
                 Action: "lambda:InvokeFunction"
                 Resource: !GetAtt SNSPublisherLambda.Arn
-## DZIALA NIE ROZWALAC
+                
+  LambdasSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: LambdasSNSTopic
+      Subscription:
+      ### dotnet
+        - Endpoint: !GetAtt TestingLambdaDotnet.Arn
+          Protocol: lambda
+          
+### dotnet          
+  TestingLambdaDotnetSNSPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref TestingLambdaDotnet
+      Principal: sns.amazonaws.com
+      SourceArn: !Ref LambdasSNSTopic
+      
+  TestingLambdaDotnet:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: TestingLambdaDotnet
+      Runtime: dotnet8
+      Handler: TestingLambdaDotnet::TestingLambdaDotnet.Function::FunctionHandler
+      Role: !GetAtt TestingLambdaDotnetExecutionRole.Arn
+      Timeout: 10
+      Code:
+        S3Bucket: cold-start-lambdas
+        S3Key: TestingLambdaDotnet.zip
+
+  TestingLambdaDotnetExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: TestingLambdaDotnetExecutionRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: 
+                - lambda.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Policies:
+        - PolicyName: CloudWatchLogsPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "arn:aws:logs:*:*:*"
+### end     

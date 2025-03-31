@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "SNSPublisherLambda\\src\\SNSPublisherLambda\\Function.cs",
               "ToolTip": "C:\\Users\\adria\\Desktop\\Git\\cold_start_experiments\\aws\\lambdas\\SNSPublisherLambda\\SNSPublisherLambda\\src\\SNSPublisherLambda\\Function.cs",
               "RelativeToolTip": "SNSPublisherLambda\\src\\SNSPublisherLambda\\Function.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T17:29:11.706Z",
               "EditorCaption": ""
@@ -45,10 +45,9 @@
               "RelativeDocumentMoniker": "SNSPublisherLambda\\src\\SNSPublisherLambda\\aws-lambda-tools-defaults.json",
               "ToolTip": "C:\\Users\\adria\\Desktop\\Git\\cold_start_experiments\\aws\\lambdas\\SNSPublisherLambda\\SNSPublisherLambda\\src\\SNSPublisherLambda\\aws-lambda-tools-defaults.json",
               "RelativeToolTip": "SNSPublisherLambda\\src\\SNSPublisherLambda\\aws-lambda-tools-defaults.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-19T17:28:59.409Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T17:28:59.409Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "SNSPublisherLambda\\src\\SNSPublisherLambda\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-19T17:28:52.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T17:28:52.648Z"
             }
           ]
         }

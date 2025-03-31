@@ -9,6 +9,7 @@ namespace SNSPublisherLambda;
 public sealed class Function
 {
     private readonly AmazonSimpleNotificationServiceClient _snsClient;
+    private const string SnsTopicArnVariableName = "SNSTopicArn";
 
     public Function()
     {
@@ -19,6 +20,9 @@ public sealed class Function
     {
         context.Logger.LogInformation("Event received");
 
-        //await _snsClient.PublishAsync(Environment.GetEnvironmentVariable("sns_topic"), "");
+        await _snsClient.PublishAsync(Environment.GetEnvironmentVariable(SnsTopicArnVariableName), "Start testing");
+
+        context.Logger.LogInformation("Published a message to SNS topic");
+        context.Logger.LogInformation("Processing finished");
     }
 }

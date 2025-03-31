@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SNSPublisherLambda")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8736b30e8017a75f814310911a791bc60ef0aa3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4a3ebfb45b33cc6185da41e9ae37324161a18d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("SNSPublisherLambda")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SNSPublisherLambda")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
