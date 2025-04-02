@@ -28,11 +28,13 @@ jobs:
           aws-region: eu-north-1
 
       - name: Build lambdas
-        run: pwsh ./aws/lambdas/${{ matrix.lambdas }}/build_application.ps1
+        working-directory: ./aws/lambdas/${{ matrix.lambdas }}
+        run: pwsh ./build_application.ps1
         shell: pwsh
 
       - name: Deploy lambdas
-        run: pwsh ./aws/lambdas/${{ matrix.lambdas }}/deploy_application.ps1
+        working-directory: ./aws/lambdas/${{ matrix.lambdas }}
+        run: pwsh ./deploy_application.ps1
         shell: pwsh
 
       - name: Deploy cloudformation
