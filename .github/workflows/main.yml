@@ -1,0 +1,42 @@
+name: Build and deploy infrastructure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: general
+    strategy:
+      matrix:
+        lambdas: [LogsProcessingLambda, SNSPublisherLambda, TestingLambdaDotnet]  
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check AWS cli
+        run:  aws --version
+
+      - name: Configure aws
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1
+
+      - name: Build lambdas
+        run: pwsh ./aws/lambdas/${{ matrix.lambdas }}/build_application.ps1
+        shell: pwsh
+
+      - name: Deploy lambdas
+        run: pwsh ./aws/lambdas/${{ matrix.lambdas }}/deploy_application.ps1
+        shell: pwsh
+
+      - name: Deploy cloudformation
+        run: pwsh ./aws/deployment/deploy_stack.ps1
+        shell: pwsh
+
+      
