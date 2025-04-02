@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: general
     strategy:
       matrix:
         lambdas: [LogsProcessingLambda, SNSPublisherLambda, TestingLambdaDotnet]  
