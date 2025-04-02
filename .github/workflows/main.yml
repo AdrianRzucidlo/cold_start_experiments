@@ -9,16 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: general
-    strategy:
-      matrix:
-        lambdas: [LogsProcessingLambda, SNSPublisherLambda, TestingLambdaDotnet]  
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Check AWS cli
-        run:  aws --version
+        run: aws --version
 
       - name: Configure aws
         uses: aws-actions/configure-aws-credentials@v4
@@ -27,18 +24,37 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1
 
-      - name: Build lambdas
-        working-directory: ./aws/lambdas/${{ matrix.lambdas }}
+      - name: Build LogsProcessingLambda
+        working-directory: ./aws/lambdas/LogsProcessingLambda
         run: pwsh ./build_application.ps1
         shell: pwsh
 
-      - name: Deploy lambdas
-        working-directory: ./aws/lambdas/${{ matrix.lambdas }}
+      - name: Build SNSPublisherLambda
+        working-directory: ./aws/lambdas/SNSPublisherLambda
+        run: pwsh ./build_application.ps1
+        shell: pwsh
+
+      - name: Build TestingLambdaDotnet
+        working-directory: ./aws/lambdas/TestingLambdaDotnet
+        run: pwsh ./build_application.ps1
+        shell: pwsh
+
+      - name: Deploy LogsProcessingLambda
+        working-directory: ./aws/lambdas/LogsProcessingLambda
+        run: pwsh ./deploy_application.ps1
+        shell: pwsh
+
+      - name: Deploy SNSPublisherLambda
+        working-directory: ./aws/lambdas/SNSPublisherLambda
+        run: pwsh ./deploy_application.ps1
+        shell: pwsh
+
+      - name: Deploy TestingLambdaDotnet
+        working-directory: ./aws/lambdas/TestingLambdaDotnet
         run: pwsh ./deploy_application.ps1
         shell: pwsh
 
       - name: Deploy cloudformation
-        run: pwsh ./aws/deployment/deploy_stack.ps1
+        working-directory: ./aws/lambdas/deployment
+        run: pwsh ./deploy_stack.ps1
         shell: pwsh
-
-      
