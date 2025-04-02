@@ -18,7 +18,7 @@ Resources:
       Environment:
         Variables:
           SNSTopicArn: !Ref LambdasSNSTopic
-          SQSQueueUrl: !Ref LogsProcessingQueue
+          SQSQueueUrl: !Ref LogsProcessingSQS
       Code:
         S3Bucket: cold-start-lambdas
         S3Key: SNSPublisherLambda.zip
