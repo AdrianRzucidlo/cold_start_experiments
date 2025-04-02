@@ -171,12 +171,13 @@ Resources:
       Code:
         S3Bucket: cold-start-lambdas
         S3Key: LogsProcessingLambda.zip
-      Events:
-        SQSEvent:
-          Type: SQS
-          Properties:
-            Queue: !GetAtt LogsProcessingSQS.Arn
-            BatchSize: 1
+        
+  LogsProcessingLambdaSQSTrigger:
+    Type: AWS::Lambda::EventSourceMapping
+    Properties:
+      BatchSize: 1
+      EventSourceArn: !GetAtt LogsProcessingQueue.Arn
+      FunctionName: !GetAtt LogsProcessingLambda.Arn
             
   LogsProcessingLambdaExecutionRole:
     Type: AWS::IAM::Role

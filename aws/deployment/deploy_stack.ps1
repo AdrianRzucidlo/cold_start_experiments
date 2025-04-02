@@ -9,7 +9,7 @@ if ($StackExists) {
 	
 	aws cloudformation wait stack-delete-complete --stack-name $StackName
     
-    aws cloudformation update-stack `
+    aws cloudformation create-stack `
         --stack-name $StackName `
         --template-body file://$TemplateFile `
         --parameters "ParameterKey=SNSInvokerSchedule,ParameterValue='rate(2 minutes)'" `
