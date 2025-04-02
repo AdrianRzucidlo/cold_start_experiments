@@ -176,7 +176,7 @@ Resources:
     Type: AWS::Lambda::EventSourceMapping
     Properties:
       BatchSize: 1
-      EventSourceArn: !GetAtt LogsProcessingQueue.Arn
+      EventSourceArn: !GetAtt LogsProcessingSQS.Arn
       FunctionName: !GetAtt LogsProcessingLambda.Arn
             
   LogsProcessingLambdaExecutionRole:
