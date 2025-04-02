@@ -55,6 +55,6 @@ jobs:
         shell: pwsh
 
       - name: Deploy cloudformation
-        working-directory: ./aws/lambdas/deployment
+        working-directory: ./aws/deployment
         run: pwsh ./deploy_stack.ps1
         shell: pwsh
