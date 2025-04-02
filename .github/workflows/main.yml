@@ -1,0 +1,43 @@
+name: Build and deploy infrastructure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        lambdas: [LogsProcessingLambda, SNSPublisherLambda, TestingLambdaDotnet]  
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt update
+          sudo apt install -y awscli
+
+      - name: Configure aws
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.aws_access_key_id }}
+          aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
+          aws-region: eu-north-1
+
+      - name: Build lambdas
+        run: pwsh aws/lambdas/${{ matrix.folder }}/build_application.ps1
+        shell: pwsh
+
+      - name: Deploy lambdas
+        run: pwsh aws/lambdas/${{ matrix.folder }}/deploy_application.ps1
+        shell: pwsh
+
+      - name: Deploy cloudformation
+        run: pwsh aws/deployment/deploy_stack.ps1
+        shell: pwsh
+
+      
