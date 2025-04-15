@@ -14,5 +14,7 @@
     <PackageReference Include="Amazon.Lambda.Core" Version="2.5.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.4" />
     <PackageReference Include="Amazon.Lambda.SQSEvents" Version="2.2.0" />
+    <PackageReference Include="AWSSDK.CloudWatchLogs" Version="3.7.410.16" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.416.4" />
   </ItemGroup>
 </Project>

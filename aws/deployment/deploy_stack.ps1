@@ -12,12 +12,12 @@ if ($StackExists) {
     aws cloudformation create-stack `
         --stack-name $StackName `
         --template-body file://$TemplateFile `
-        --parameters "ParameterKey=SNSInvokerSchedule,ParameterValue='rate(2 minutes)'" `
+        --parameters "ParameterKey=SNSInvokerSchedule,ParameterValue='rate(45 minutes)'" `
         --capabilities CAPABILITY_NAMED_IAM `
         --region $Region
 
     Write-Host "Updating stack..."
-    aws cloudformation wait stack-update-complete --stack-name $StackName --region $Region
+    aws cloudformation wait stack-create-complete --stack-name $StackName --region $Region
 } 
 else {
     Write-Host "Creating new stack '$StackName'..."
@@ -25,7 +25,7 @@ else {
     aws cloudformation create-stack `
         --stack-name $StackName `
         --template-body file://$TemplateFile `
-        --parameters "ParameterKey=SNSInvokerSchedule,ParameterValue='rate(2 minutes)'" `
+        --parameters "ParameterKey=SNSInvokerSchedule,ParameterValue='rate(45 minutes)'" `
         --capabilities CAPABILITY_NAMED_IAM `
         --region $Region
 

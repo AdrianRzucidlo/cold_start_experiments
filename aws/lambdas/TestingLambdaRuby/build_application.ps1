@@ -1,0 +1,1 @@
+Compress-Archive -Path "./TestingLambdaRuby.rb" -DestinationPath TestingLambdaRuby.zip

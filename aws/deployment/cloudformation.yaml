@@ -4,7 +4,7 @@ Parameters:
   SNSInvokerSchedule:
     Type: String
     Default: "rate(1 hour)"
-    Description: "Harmonogram dla EventBridge Rule (np. rate(5 minutes), rate(1 hour), cron(0 12 * * ? *))"
+    Description: "Rate for EventBridge Rule (exmaple: rate(5 minutes), rate(1 hour), cron(0 12 * * ? *))"
 
 Resources:
   SNSPublisherLambda:
@@ -102,6 +102,19 @@ Resources:
       ### dotnet
         - Endpoint: !GetAtt TestingLambdaDotnet.Arn
           Protocol: lambda
+      ### java
+        - Endpoint: !GetAtt TestingLambdaJava.Arn
+          Protocol: lambda
+      ### node
+        - Endpoint: !GetAtt TestingLambdaNode.Arn
+          Protocol: lambda
+      ### python
+        - Endpoint: !GetAtt TestingLambdaPython.Arn
+          Protocol: lambda
+      ### ruby
+        - Endpoint: !GetAtt TestingLambdaRuby.Arn
+          Protocol: lambda
+      
           
 ### dotnet          
   TestingLambdaDotnetSNSPermission:
@@ -148,12 +161,187 @@ Resources:
                   - "logs:CreateLogStream"
                   - "logs:PutLogEvents"
                 Resource: "arn:aws:logs:*:*:*"
-### end
-
-  LogsS3Bucket:
-    Type: AWS::S3::Bucket
+### Java          
+  TestingLambdaJavaSNSPermission:
+    Type: AWS::Lambda::Permission
     Properties:
-      BucketName: testing-lambdas-logs
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref TestingLambdaJava
+      Principal: sns.amazonaws.com
+      SourceArn: !Ref LambdasSNSTopic
+      
+  TestingLambdaJava:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: TestingLambdaJava
+      Runtime: java17
+      Handler: org.example.Handler::handleRequest
+      Role: !GetAtt TestingLambdaJavaExecutionRole.Arn
+      Timeout: 10
+      Code:
+        S3Bucket: cold-start-lambdas
+        S3Key: TestingLambdaJava.zip
+
+  TestingLambdaJavaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: TestingLambdaJavaExecutionRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: 
+                - lambda.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Policies:
+        - PolicyName: CloudWatchLogsPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "arn:aws:logs:*:*:*"
+### Node          
+  TestingLambdaNodeSNSPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref TestingLambdaNode
+      Principal: sns.amazonaws.com
+      SourceArn: !Ref LambdasSNSTopic
+      
+  TestingLambdaNode:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: TestingLambdaNode
+      Runtime: nodejs22.x
+      Handler: TestingLambdaNode.handler
+      Role: !GetAtt TestingLambdaNodeExecutionRole.Arn
+      Timeout: 10
+      Code:
+        S3Bucket: cold-start-lambdas
+        S3Key: TestingLambdaNode.zip
+
+  TestingLambdaNodeExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: TestingLambdaNodeExecutionRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: 
+                - lambda.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Policies:
+        - PolicyName: CloudWatchLogsPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "arn:aws:logs:*:*:*"
+### Python          
+  TestingLambdaPythonSNSPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref TestingLambdaPython
+      Principal: sns.amazonaws.com
+      SourceArn: !Ref LambdasSNSTopic
+      
+  TestingLambdaPython:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: TestingLambdaPython
+      Runtime: python3.13
+      Handler: TestingLambdaPython.lambda_handler
+      Role: !GetAtt TestingLambdaPythonExecutionRole.Arn
+      Timeout: 10
+      Code:
+        S3Bucket: cold-start-lambdas
+        S3Key: TestingLambdaPython.zip
+
+  TestingLambdaPythonExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: TestingLambdaPythonExecutionRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: 
+                - lambda.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Policies:
+        - PolicyName: CloudWatchLogsPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "arn:aws:logs:*:*:*"
+### Ruby          
+  TestingLambdaRubySNSPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref TestingLambdaRuby
+      Principal: sns.amazonaws.com
+      SourceArn: !Ref LambdasSNSTopic
+      
+  TestingLambdaRuby:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: TestingLambdaRuby
+      Runtime: ruby3.4
+      Handler: TestingLambdaRuby.lambda_handler
+      Role: !GetAtt TestingLambdaRubyExecutionRole.Arn
+      Timeout: 10
+      Code:
+        S3Bucket: cold-start-lambdas
+        S3Key: TestingLambdaRuby.zip
+
+  TestingLambdaRubyExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: TestingLambdaRubyExecutionRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: 
+                - lambda.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Policies:
+        - PolicyName: CloudWatchLogsPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "arn:aws:logs:*:*:*"
+### end
     
   LogsProcessingSQS:
     Type: AWS::SQS::Queue
@@ -164,6 +352,7 @@ Resources:
   LogsProcessingLambda:
     Type: AWS::Lambda::Function
     Properties:
+      FunctionName: LogsProcessingLambda
       Runtime: dotnet8
       Handler: LogsProcessingLambda::LogsProcessingLambda.Function::FunctionHandler
       Role: !GetAtt LogsProcessingLambdaExecutionRole.Arn
@@ -206,7 +395,7 @@ Resources:
                   - "logs:DescribeLogStreams"
                   - "logs:GetLogEvents"
                 Resource: "*"
-        - PolicyName: S3BucketPolicy
+        - PolicyName: S3ObjectsPolicy
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
@@ -215,8 +404,15 @@ Resources:
                     - s3:PutObject
                     - s3:GetObject
                     - s3:DeleteObject
+                Resource: arn:aws:s3:::testing-lambdas-logs/*
+        - PolicyName: S3BucketPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
                     - s3:ListBucket
-                Resource: !GetAtt LogsS3Bucket.Arn
+                Resource: arn:aws:s3:::testing-lambdas-logs
         - PolicyName: SQSQueuePolicy
           PolicyDocument:
             Version: "2012-10-17"

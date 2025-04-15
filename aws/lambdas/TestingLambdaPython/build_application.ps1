@@ -1,0 +1,1 @@
+Compress-Archive -Path "./TestingLambdaPython.py" -DestinationPath TestingLambdaPython.zip

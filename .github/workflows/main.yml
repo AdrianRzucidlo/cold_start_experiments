@@ -39,6 +39,26 @@ jobs:
         run: pwsh ./build_application.ps1
         shell: pwsh
 
+      - name: Build TestingLambdaJava
+        working-directory: ./aws/lambdas/TestingLambdaJava
+        run: pwsh ./build_application.ps1
+        shell: pwsh
+
+      - name: Build TestingLambdaNode
+        working-directory: ./aws/lambdas/TestingLambdaNode
+        run: pwsh ./build_application.ps1
+        shell: pwsh
+
+      - name: Build TestingLambdaRuby
+        working-directory: ./aws/lambdas/TestingLambdaRuby
+        run: pwsh ./build_application.ps1
+        shell: pwsh
+
+      - name: Build TestingLambdaPython
+        working-directory: ./aws/lambdas/TestingLambdaPython
+        run: pwsh ./build_application.ps1
+        shell: pwsh
+
       - name: Deploy LogsProcessingLambda
         working-directory: ./aws/lambdas/LogsProcessingLambda
         run: pwsh ./deploy_application.ps1
@@ -51,6 +71,26 @@ jobs:
 
       - name: Deploy TestingLambdaDotnet
         working-directory: ./aws/lambdas/TestingLambdaDotnet
+        run: pwsh ./deploy_application.ps1
+        shell: pwsh
+
+      - name: Deploy TestingLambdaJava
+        working-directory: ./aws/lambdas/TestingLambdaJava
+        run: pwsh ./deploy_application.ps1
+        shell: pwsh
+
+      - name: Deploy TestingLambdaPython
+        working-directory: ./aws/lambdas/TestingLambdaPython
+        run: pwsh ./deploy_application.ps1
+        shell: pwsh
+
+      - name: Deploy TestingLambdaRuby
+        working-directory: ./aws/lambdas/TestingLambdaRuby
+        run: pwsh ./deploy_application.ps1
+        shell: pwsh
+
+      - name: Deploy TestingLambdaNode
+        working-directory: ./aws/lambdas/TestingLambdaNode
         run: pwsh ./deploy_application.ps1
         shell: pwsh
 
