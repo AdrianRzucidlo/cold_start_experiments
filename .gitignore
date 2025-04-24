@@ -47,3 +47,13 @@ docker-compose.override.yml
 
 Thumbs.db
 .DS_Store
+
+terraform.tfstate
+terraform.tfstate.backup
+
+.terraform/
+
+.terraform.lock.hcl
+
+*.tfvars
+*.tfvars.json
