@@ -1,0 +1,6 @@
+{
+    "name": "testing-function-node",
+    "version": "1.0.0",
+    "main": "function.js",
+    "dependencies": {}
+  }

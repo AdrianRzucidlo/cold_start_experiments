@@ -1,5 +1,5 @@
 variable "project_id" {
-  type = string
+  type    = string
   default = "cold-start-experiments"
 }
 
@@ -8,7 +8,12 @@ variable "region" {
   default = "europe-central2"
 }
 
-variable "bucket_name" {
-  type = string
+variable "functions_bucket_name" {
+  type    = string
+  default = "cold-start-experiments-functions"
+}
+
+variable "logs_bucket_name" {
+  type    = string
   default = "cold-start-experiments-functions"
 }

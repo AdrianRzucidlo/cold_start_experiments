@@ -129,7 +129,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: TestingLambdaDotnet
-      Runtime: dotnet8
+      Runtime: dotnet6
       Handler: TestingLambdaDotnet::TestingLambdaDotnet.Function::FunctionHandler
       Role: !GetAtt TestingLambdaDotnetExecutionRole.Arn
       Timeout: 10
@@ -174,7 +174,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: TestingLambdaJava
-      Runtime: java17
+      Runtime: java11
       Handler: org.example.Handler::handleRequest
       Role: !GetAtt TestingLambdaJavaExecutionRole.Arn
       Timeout: 10
@@ -219,7 +219,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: TestingLambdaNode
-      Runtime: nodejs22.x
+      Runtime: nodejs18.x
       Handler: TestingLambdaNode.handler
       Role: !GetAtt TestingLambdaNodeExecutionRole.Arn
       Timeout: 10
@@ -264,7 +264,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: TestingLambdaPython
-      Runtime: python3.13
+      Runtime: python3.11
       Handler: TestingLambdaPython.lambda_handler
       Role: !GetAtt TestingLambdaPythonExecutionRole.Arn
       Timeout: 10
@@ -309,7 +309,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: TestingLambdaRuby
-      Runtime: ruby3.4
+      Runtime: ruby3.2
       Handler: TestingLambdaRuby.lambda_handler
       Role: !GetAtt TestingLambdaRubyExecutionRole.Arn
       Timeout: 10
