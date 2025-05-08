@@ -1,0 +1,192 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.13">
+  <diagram name="Strona-1" id="MvJMNqqGQVLzLF0IuSnO">
+    <mxGraphModel dx="2610" dy="2487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Bop8ndBJhVNBx9gG447U-76" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-57" target="Bop8ndBJhVNBx9gG447U-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="960" as="sourcePoint" />
+            <mxPoint x="460" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-77" value="Saves calculated cold start value" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Bop8ndBJhVNBx9gG447U-76">
+          <mxGeometry x="-0.0729" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-66" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-45" target="Bop8ndBJhVNBx9gG447U-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="830" as="sourcePoint" />
+            <mxPoint x="730" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-67" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-50" target="Bop8ndBJhVNBx9gG447U-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="890" as="sourcePoint" />
+            <mxPoint x="780" y="840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-65" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-40" target="Bop8ndBJhVNBx9gG447U-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="810" as="sourcePoint" />
+            <mxPoint x="750" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-64" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-30" target="Bop8ndBJhVNBx9gG447U-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="20" y="930" as="sourcePoint" />
+            <mxPoint x="70" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-63" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-2" target="Bop8ndBJhVNBx9gG447U-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="810" as="sourcePoint" />
+            <mxPoint x="130" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-69" value="Saves information about execution time twice" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Bop8ndBJhVNBx9gG447U-63">
+          <mxGeometry x="0.2381" y="-3" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-2" value="TestingFunctionDotnet" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://codelabs.developers.google.com/static/codelabs/cloud-starting-cloudfunctions/img/3b93ba3023ef58a5.png;" vertex="1" parent="1">
+          <mxGeometry x="50" y="450" width="76" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-17" value="Trigger every full hour" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="170" as="sourcePoint" />
+            <mxPoint x="70" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-6" value="Cloud Scheduler Dotnet1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="38" y="70" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-16" target="Bop8ndBJhVNBx9gG447U-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-70" value="Triggers every full hour + 5 minutes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Bop8ndBJhVNBx9gG447U-60">
+          <mxGeometry x="-0.0476" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-16" value="Logs Processing Cloud Scheduler" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="920" y="380" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-23" value="Triggers every full hour + 1minute" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.628;exitY=0.987;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="170" as="sourcePoint" />
+            <mxPoint x="100" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-24" value="Cloud Scheduler Dotnet2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="38" y="-60" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-30" value="TestingFunctionJava" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://codelabs.developers.google.com/static/codelabs/cloud-starting-cloudfunctions/img/3b93ba3023ef58a5.png;" vertex="1" parent="1">
+          <mxGeometry x="232" y="450" width="76" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="252" y="170" as="sourcePoint" />
+            <mxPoint x="252" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-32" value="Cloud Scheduler Java1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="220" y="70" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.628;exitY=0.987;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="282" y="170" as="sourcePoint" />
+            <mxPoint x="282" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-34" value="Cloud Scheduler Java2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="220" y="-60" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-40" value="TestingFunctionPython" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://codelabs.developers.google.com/static/codelabs/cloud-starting-cloudfunctions/img/3b93ba3023ef58a5.png;" vertex="1" parent="1">
+          <mxGeometry x="392" y="450" width="76" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="412" y="170" as="sourcePoint" />
+            <mxPoint x="412" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-42" value="Cloud Scheduler Python1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="380" y="70" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.628;exitY=0.987;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="442" y="170" as="sourcePoint" />
+            <mxPoint x="442" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-44" value="Cloud Scheduler Python2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="380" y="-60" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-45" value="TestingFunctionNode" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://codelabs.developers.google.com/static/codelabs/cloud-starting-cloudfunctions/img/3b93ba3023ef58a5.png;" vertex="1" parent="1">
+          <mxGeometry x="572" y="450" width="76" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="592" y="170" as="sourcePoint" />
+            <mxPoint x="592" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-47" value="Cloud Scheduler Node1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="560" y="70" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.628;exitY=0.987;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="622" y="170" as="sourcePoint" />
+            <mxPoint x="622" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-49" value="Cloud Scheduler Node2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="560" y="-60" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-50" value="TestingFunctionRuby" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://codelabs.developers.google.com/static/codelabs/cloud-starting-cloudfunctions/img/3b93ba3023ef58a5.png;" vertex="1" parent="1">
+          <mxGeometry x="739" y="450" width="76" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="759" y="170" as="sourcePoint" />
+            <mxPoint x="759" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-52" value="Cloud Scheduler Ruby1" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="727" y="70" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-53" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.628;exitY=0.987;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-54">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="789" y="170" as="sourcePoint" />
+            <mxPoint x="789" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-54" value="Cloud Scheduler Ruby2" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://storage.googleapis.com/gweb-cloudblog-publish/images/cloud-scheduler-512-color.max-600x600.png;" vertex="1" parent="1">
+          <mxGeometry x="727" y="-60" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-57" value="LogsProcessingFunction" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://codelabs.developers.google.com/static/codelabs/cloud-starting-cloudfunctions/img/3b93ba3023ef58a5.png;" vertex="1" parent="1">
+          <mxGeometry x="932" y="716.82" width="76" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-61" value="Cloud Logs" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://miro.medium.com/v2/resize:fit:440/1*PFx3dCnvT_-Uh7TRZ_xrHA.png;" vertex="1" parent="1">
+          <mxGeometry x="370" y="700" width="120" height="109.64" as="geometry" />
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-73" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Bop8ndBJhVNBx9gG447U-57" target="Bop8ndBJhVNBx9gG447U-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="960" as="sourcePoint" />
+            <mxPoint x="490" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-74" value="Read logs about execution time" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Bop8ndBJhVNBx9gG447U-73">
+          <mxGeometry x="-0.4318" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bop8ndBJhVNBx9gG447U-75" value="Cloud Storage" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://k21academy.com/wp-content/uploads/2021/02/Google-Cloud-Storage-logo-1.png;" vertex="1" parent="1">
+          <mxGeometry x="640" y="870" width="122" height="122" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
