@@ -18,10 +18,10 @@ Wnioski z pracy mogą pomóc w optymalizacji aplikacji serverless i wyborze opty
 
 <h3> Środowisko testowe Amazon Web Services: </h3>
 
-![AWS cold start testing architecture](./AWS_cold_start_testing_architecture.drawio.png)
+![AWS cold start testing architecture](./architecture/AWS_cold_start_testing_architecture.drawio.png)
 
 <h3> Środowisko testowe Google Cloud Platform: </h3>
 
-![GCP cold start testing architecture](./GCP_cold_start_testing_architecture.drawio.png)
+![GCP cold start testing architecture](./architecture/GCP_cold_start_testing_architecture.drawio.png)
 
 <p>W celu automatycznego deploymentu zmian utworzony został workflow GitHub Actions. </p>
