@@ -1,4 +1,4 @@
-name: Build and deploy infrastructure
+name: Build and deploy infrastructure for AWS and GCP
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build and deploy AWS:
     runs-on: ubuntu-latest
     if: contains(github.event.head_commit.message, '[AWS]')
     environment: general
@@ -14,9 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Check AWS cli
-        run: aws --version
 
       - name: Configure aws
         uses: aws-actions/configure-aws-credentials@v4
@@ -99,3 +96,80 @@ jobs:
         working-directory: ./aws/deployment
         run: pwsh ./deploy_stack.ps1
         shell: pwsh
+
+build GCP:
+  runs-on: ubuntu-latest
+  if: contains(github.event.head_commit.message, '[GCP]')
+  environment: general
+  steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Install Google Cloud SDK
+      run: |
+        curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+        sudo apt-add-repository "deb https://packages.cloud.google.com/apt cloud-sdk main"
+        sudo apt-get update && sudo apt-get install google-cloud-sdk
+
+    - name: Install Terraform
+      run: |
+        curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+        sudo apt-add-repository "deb https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+        sudo apt-get update
+        sudo apt-get install terraform
+
+    - name: Set up Google Cloud authentication
+      run: |
+        echo ${{ secrets.GCP_CREDENTIALS }} | base64 --decode > $HOME/.config/gcloud/application_default_credentials.json
+        gcloud auth activate-service-account --key-file=$HOME/.config/gcloud/application_default_credentials.json
+        gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
+
+    - name: Build LogsProcessingFunction
+      working-directory: ./gcp/functions/LogsProcessingFunction
+      run: pwsh ./build_application.ps1
+      shell: pwsh
+
+    - name: Build TestingFunctionDotnet
+      working-directory: ./gcp/functions/TestingFunctionDotnet
+      run: pwsh ./build_application.ps1
+      shell: pwsh
+
+    - name: Build TestingFunctionJava
+      working-directory: ./gcp/functions/TestingFunctionJava
+      run: pwsh ./build_application.ps1
+      shell: pwsh
+
+    - name: Build TestingFunctionNode
+      working-directory: ./gcp/functions/TestingFunctionNode
+      run: pwsh ./build_deploy_application.ps1
+      shell: pwsh
+
+    - name: Build TestingFunctionRuby
+      working-directory: ./gcp/functions/TestingFunctionRuby
+      run: pwsh ./build_deploy_application.ps1
+      shell: pwsh
+
+    - name: Build and Deploy TestingFunctionPython
+      working-directory: ./gcp/functions/TestingFunctionPython
+      run: pwsh ./build_deploy_application.ps1
+      shell: pwsh
+
+    - name: Deploy LogsProcessingFunction
+      working-directory: ./gcp/functions/LogsProcessingFunction
+      run: pwsh ./deploy_application.ps1
+      shell: pwsh
+
+    - name: Deploy TestingFunctionDotnet
+      working-directory: ./gcp/functions/TestingFunctionDotnet
+      run: pwsh ./deploy_application.ps1
+      shell: pwsh
+
+    - name: Deploy TestingFunctionJava
+      working-directory: ./gcp/functions/TestingFunctionJava
+      run: pwsh ./deploy_application.ps1
+      shell: pwsh
+
+    - name: Deploy Terraform
+      working-directory: ./gcp/deployment
+      run: pwsh ./deploy_infrastructure.ps1
+      shell: pwsh
