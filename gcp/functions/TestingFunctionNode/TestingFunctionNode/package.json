@@ -2,5 +2,7 @@
     "name": "testing-function-node",
     "version": "1.0.0",
     "main": "function.js",
-    "dependencies": {}
+      "dependencies": {
+      "@google-cloud/storage": "^7.16.0"
+  }
   }

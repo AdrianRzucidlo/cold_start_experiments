@@ -12,6 +12,8 @@ jar xf "..\target\TestingLambdaJava-1.0-SNAPSHOT-shaded.jar"
 
 Pop-Location
 
+#fsutil file createnew $UnpackDir/fake.bin 209715200
+
 Compress-Archive -Path "$UnpackDir\*" -DestinationPath "../TestingLambdaJava.zip" -Force
 
 cd..

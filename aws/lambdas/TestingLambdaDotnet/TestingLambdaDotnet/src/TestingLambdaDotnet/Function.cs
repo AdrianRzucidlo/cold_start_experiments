@@ -1,5 +1,6 @@
 using Amazon.Lambda.Core;
 using Amazon.Lambda.SNSEvents;
+using Google.Cloud.Storage.V1;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
@@ -22,6 +23,15 @@ public class Function
     private async Task ProcessRecordAsync(SNSEvent.SNSRecord record, ILambdaContext context)
     {
         context.Logger.LogInformation($"Processed record {record.Sns.Message}");
+
+        try
+        {
+            var storage = StorageClient.Create();
+            var buckets = storage.ListBuckets("fake");
+        }
+        catch (Exception)
+        {
+        }
 
         await Task.CompletedTask;
     }

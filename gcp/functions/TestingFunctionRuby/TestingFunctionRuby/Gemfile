@@ -3,3 +3,4 @@ source "https://rubygems.org"
 
 gem "functions_framework"
 gem "google-cloud-functions"
+gem "google-cloud-storage", "~> 1.52"
